@@ -1,0 +1,2254 @@
+[build] linux64
+[build] linux32
+[build] win64
+In file included from /usr/x86_64-w64-mingw32/sys-root/mingw/include/windows.h:71,
+                 from /usr/x86_64-w64-mingw32/sys-root/mingw/include/winsock2.h:23,
+                 from /usr/x86_64-w64-mingw32/sys-root/mingw/include/curl/curl.h:82,
+                 from src/main.c:4:
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/wingdi.h:3251:28: error: 'Rectangle' redeclared as different kind of symbol
+ 3251 |   WINGDIAPI WINBOOL WINAPI Rectangle(HDC hdc,int left,int top,int right,int bottom);
+      |                            ^~~~~~~~~
+In file included from src/main.c:3:
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:260:3: note: previous declaration of 'Rectangle' with type 'Rectangle'
+  260 | } Rectangle;
+      |   ^~~~~~~~~
+In file included from /usr/x86_64-w64-mingw32/sys-root/mingw/include/windows.h:72:
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:2282:29: error: conflicting types for 'CloseWindow'; have 'WINBOOL(struct HWND__ *)' {aka 'int(struct HWND__ *)'}
+ 2282 |   WINUSERAPI WINBOOL WINAPI CloseWindow (HWND hWnd);
+      |                             ^~~~~~~~~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:969:12: note: previous declaration of 'CloseWindow' with type 'void(void)'
+  969 | RLAPI void CloseWindow(void);                                     // Close window and unload OpenGL context
+      |            ^~~~~~~~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3761:25: error: conflicting types for 'ShowCursor'; have 'int(WINBOOL)' {aka 'int(int)'}
+ 3761 |   WINUSERAPI int WINAPI ShowCursor(WINBOOL bShow);
+      |                         ^~~~~~~~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:1019:12: note: previous declaration of 'ShowCursor' with type 'void(void)'
+ 1019 | RLAPI void ShowCursor(void);                                      // Shows cursor
+      |            ^~~~~~~~~~
+src/main.c:204:23: error: expected declaration specifiers or '...' before 'Rectangle'
+  204 | static bool ButtonHit(Rectangle r) {
+      |                       ^~~~~~~~~
+src/main.c:208:24: error: expected declaration specifiers or '...' before 'Rectangle'
+  208 | static void DrawButton(Rectangle r, const char *text, bool enabled) {
+      |                        ^~~~~~~~~
+src/main.c:235:26: error: expected declaration specifiers or '...' before 'Rectangle'
+  235 | static void DrawInputBox(Rectangle r, const char *buffer, bool active) {
+      |                          ^~~~~~~~~
+src/main.c: In function 'DrawTextWrapped':
+src/main.c:253:18: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  253 |         DrawText(line, x, lineY, spacing, color);
+      |                  ^~~~
+      |                  |
+      |                  char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+In file included from /usr/x86_64-w64-mingw32/sys-root/mingw/include/minwindef.h:163,
+                 from /usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:9,
+                 from /usr/x86_64-w64-mingw32/sys-root/mingw/include/windows.h:69:
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:253:24: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  253 |         DrawText(line, x, lineY, spacing, color);
+      |                        ^
+      |                        |
+      |                        int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:253:34: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  253 |         DrawText(line, x, lineY, spacing, color);
+      |                                  ^~~~~~~
+      |                                  |
+      |                                  int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+src/main.c:253:43: error: incompatible type for argument 5 of 'DrawTextA'
+  253 |         DrawText(line, x, lineY, spacing, color);
+      |                                           ^~~~~
+      |                                           |
+      |                                           Color
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c: In function 'main':
+src/main.c:353:22: error: expected ';' before 'nameBox'
+  353 |             Rectangle nameBox = {440, 230, 400, 44};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:354:22: error: expected ';' before 'codeBox'
+  354 |             Rectangle codeBox = {440, 300, 400, 44};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:355:22: error: expected ';' before 'capImg'
+  355 |             Rectangle capImg = {440, 370, 200, 70};
+      |                      ^~~~~~~
+      |                      ;
+src/main.c:356:22: error: expected ';' before 'capBox'
+  356 |             Rectangle capBox = {660, 383, 180, 44};
+      |                      ^~~~~~~
+      |                      ;
+src/main.c:357:22: error: expected ';' before 'createBtn'
+  357 |             Rectangle createBtn = {440, 470, 195, 50};
+      |                      ^~~~~~~~~~
+      |                      ;
+src/main.c:358:22: error: expected ';' before 'joinBtn'
+  358 |             Rectangle joinBtn = {645, 470, 195, 50};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:360:17: error: implicit declaration of function 'ButtonHit' [-Wimplicit-function-declaration]
+  360 |             if (ButtonHit(nameBox)) focus = 0;
+      |                 ^~~~~~~~~
+src/main.c:360:27: error: 'nameBox' undeclared (first use in this function)
+  360 |             if (ButtonHit(nameBox)) focus = 0;
+      |                           ^~~~~~~
+src/main.c:360:27: note: each undeclared identifier is reported only once for each function it appears in
+src/main.c:361:27: error: 'codeBox' undeclared (first use in this function)
+  361 |             if (ButtonHit(codeBox)) focus = 1;
+      |                           ^~~~~~~
+src/main.c:362:27: error: 'capBox' undeclared (first use in this function); did you mean 'capTex'?
+  362 |             if (ButtonHit(capBox)) focus = 2;
+      |                           ^~~~~~
+      |                           capTex
+src/main.c:364:27: error: 'capImg' undeclared (first use in this function); did you mean 'capId'?
+  364 |             if (ButtonHit(capImg)) wantCaptcha = true;
+      |                           ^~~~~~
+      |                           capId
+src/main.c:372:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  372 |             DrawText("W10L courtroom roast battle", 370, 90, 40, RED);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:372:53: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  372 |             DrawText("W10L courtroom roast battle", 370, 90, 40, RED);
+      |                                                     ^~~
+      |                                                     |
+      |                                                     int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:372:62: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  372 |             DrawText("W10L courtroom roast battle", 370, 90, 40, RED);
+      |                                                              ^~
+      |                                                              |
+      |                                                              int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:182:35: error: incompatible type for argument 5 of 'DrawTextA'
+  182 | #define RED        CLITERAL(Color){ 230, 41, 55, 255 }     // Red
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:372:66: note: in expansion of macro 'RED'
+  372 |             DrawText("W10L courtroom roast battle", 370, 90, 40, RED);
+      |                                                                  ^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:373:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  373 |             DrawText("Online client", 560, 150, 20, GRAY);
+      |                      ^~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:373:39: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  373 |             DrawText("Online client", 560, 150, 20, GRAY);
+      |                                       ^~~
+      |                                       |
+      |                                       int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:373:49: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  373 |             DrawText("Online client", 560, 150, 20, GRAY);
+      |                                                 ^~
+      |                                                 |
+      |                                                 int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:373:53: note: in expansion of macro 'GRAY'
+  373 |             DrawText("Online client", 560, 150, 20, GRAY);
+      |                                                     ^~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:374:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  374 |             DrawText("Username", 440, 205, 20, WHITE);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:374:34: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  374 |             DrawText("Username", 440, 205, 20, WHITE);
+      |                                  ^~~
+      |                                  |
+      |                                  int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:374:44: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  374 |             DrawText("Username", 440, 205, 20, WHITE);
+      |                                            ^~
+      |                                            |
+      |                                            int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:374:48: note: in expansion of macro 'WHITE'
+  374 |             DrawText("Username", 440, 205, 20, WHITE);
+      |                                                ^~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:375:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  375 |             DrawText("Lobby code (blank = create)", 440, 275, 20, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:375:53: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  375 |             DrawText("Lobby code (blank = create)", 440, 275, 20, WHITE);
+      |                                                     ^~~
+      |                                                     |
+      |                                                     int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:375:63: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  375 |             DrawText("Lobby code (blank = create)", 440, 275, 20, WHITE);
+      |                                                               ^~
+      |                                                               |
+      |                                                               int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:375:67: note: in expansion of macro 'WHITE'
+  375 |             DrawText("Lobby code (blank = create)", 440, 275, 20, WHITE);
+      |                                                                   ^~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:376:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  376 |             DrawText("Captcha (click image to refresh)", 440, 345, 20, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:376:58: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  376 |             DrawText("Captcha (click image to refresh)", 440, 345, 20, WHITE);
+      |                                                          ^~~
+      |                                                          |
+      |                                                          int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:376:68: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  376 |             DrawText("Captcha (click image to refresh)", 440, 345, 20, WHITE);
+      |                                                                    ^~
+      |                                                                    |
+      |                                                                    int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:376:72: note: in expansion of macro 'WHITE'
+  376 |             DrawText("Captcha (click image to refresh)", 440, 345, 20, WHITE);
+      |                                                                        ^~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:378:13: error: implicit declaration of function 'DrawInputBox' [-Wimplicit-function-declaration]
+  378 |             DrawInputBox(nameBox, username, focus == 0);
+      |             ^~~~~~~~~~~~
+src/main.c:381:59: error: expected ')' before '{' token
+  381 |             if (hasCap) DrawTexturePro(capTex, (Rectangle){0, 0, (float)capTex.width, (float)capTex.height}, capImg, (Vector2){0, 0}, 0, WHITE);
+      |                                       ~                   ^
+      |                                                           )
+src/main.c:381:48: error: incompatible type for argument 2 of 'DrawTexturePro'
+  381 |             if (hasCap) DrawTexturePro(capTex, (Rectangle){0, 0, (float)capTex.width, (float)capTex.height}, capImg, (Vector2){0, 0}, 0, WHITE);
+      |                                                ^~~~~~~~~~~
+      |                                                |
+      |                                                WINBOOL (*)(struct HDC__ *, int,  int,  int,  int) {aka int (*)(struct HDC__ *, int,  int,  int,  int)}
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:1433:56: note: expected 'Rectangle' but argument is of type 'WINBOOL (*)(struct HDC__ *, int,  int,  int,  int)' {aka 'int (*)(struct HDC__ *, int,  int,  int,  int)'}
+ 1433 | RLAPI void DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color tint); // Draw a part of a texture defined by a rectangle with 'pro' parameters
+      |                                              ~~~~~~~~~~^~~~~~
+src/main.c:381:25: error: too few arguments to function 'DrawTexturePro'; expected 6, have 2
+  381 |             if (hasCap) DrawTexturePro(capTex, (Rectangle){0, 0, (float)capTex.width, (float)capTex.height}, capImg, (Vector2){0, 0}, 0, WHITE);
+      |                         ^~~~~~~~~~~~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:1433:12: note: declared here
+ 1433 | RLAPI void DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color tint); // Draw a part of a texture defined by a rectangle with 'pro' parameters
+      |            ^~~~~~~~~~~~~~
+src/main.c:382:27: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  382 |             else DrawText("loading...", 480, 395, 20, GRAY);
+      |                           ^~~~~~~~~~~~
+      |                           |
+      |                           char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:382:41: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  382 |             else DrawText("loading...", 480, 395, 20, GRAY);
+      |                                         ^~~
+      |                                         |
+      |                                         int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:382:51: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  382 |             else DrawText("loading...", 480, 395, 20, GRAY);
+      |                                                   ^~
+      |                                                   |
+      |                                                   int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:382:55: note: in expansion of macro 'GRAY'
+  382 |             else DrawText("loading...", 480, 395, 20, GRAY);
+      |                                                       ^~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:386:13: error: implicit declaration of function 'DrawButton'; did you mean 'DrawIcon'? [-Wimplicit-function-declaration]
+  386 |             DrawButton(createBtn, "Create Lobby", ready);
+      |             ^~~~~~~~~~
+      |             DrawIcon
+src/main.c:386:24: error: 'createBtn' undeclared (first use in this function); did you mean 'CreatePen'?
+  386 |             DrawButton(createBtn, "Create Lobby", ready);
+      |                        ^~~~~~~~~
+      |                        CreatePen
+src/main.c:387:24: error: 'joinBtn' undeclared (first use in this function)
+  387 |             DrawButton(joinBtn, "Join Lobby", ready && strlen(lobbyCode) > 0);
+      |                        ^~~~~~~
+src/main.c:388:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  388 |             DrawText(message, 440, 545, 20, YELLOW);
+      |                      ^~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:388:31: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  388 |             DrawText(message, 440, 545, 20, YELLOW);
+      |                               ^~~
+      |                               |
+      |                               int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:388:41: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  388 |             DrawText(message, 440, 545, 20, YELLOW);
+      |                                         ^~
+      |                                         |
+      |                                         int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:178:35: error: incompatible type for argument 5 of 'DrawTextA'
+  178 | #define YELLOW     CLITERAL(Color){ 253, 249, 0, 255 }     // Yellow
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:388:45: note: in expansion of macro 'YELLOW'
+  388 |             DrawText(message, 440, 545, 20, YELLOW);
+      |                                             ^~~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:404:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  404 |             DrawText("Lobby", 40, 30, 40, RED);
+      |                      ^~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:404:31: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  404 |             DrawText("Lobby", 40, 30, 40, RED);
+      |                               ^~
+      |                               |
+      |                               int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:404:39: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  404 |             DrawText("Lobby", 40, 30, 40, RED);
+      |                                       ^~
+      |                                       |
+      |                                       int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:182:35: error: incompatible type for argument 5 of 'DrawTextA'
+  182 | #define RED        CLITERAL(Color){ 230, 41, 55, 255 }     // Red
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:404:43: note: in expansion of macro 'RED'
+  404 |             DrawText("Lobby", 40, 30, 40, RED);
+      |                                           ^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:405:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  405 |             DrawText(TextFormat("Code: %s", lobbyCode), 200, 40, 30, YELLOW);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      const char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'const char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:405:57: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  405 |             DrawText(TextFormat("Code: %s", lobbyCode), 200, 40, 30, YELLOW);
+      |                                                         ^~~
+      |                                                         |
+      |                                                         int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:405:66: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  405 |             DrawText(TextFormat("Code: %s", lobbyCode), 200, 40, 30, YELLOW);
+      |                                                                  ^~
+      |                                                                  |
+      |                                                                  int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:178:35: error: incompatible type for argument 5 of 'DrawTextA'
+  178 | #define YELLOW     CLITERAL(Color){ 253, 249, 0, 255 }     // Yellow
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:405:70: note: in expansion of macro 'YELLOW'
+  405 |             DrawText(TextFormat("Code: %s", lobbyCode), 200, 40, 30, YELLOW);
+      |                                                                      ^~~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:406:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  406 |             DrawText(TextFormat("Players: %d / 15", g.count), 40, 80, 20, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      const char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'const char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:406:63: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  406 |             DrawText(TextFormat("Players: %d / 15", g.count), 40, 80, 20, WHITE);
+      |                                                               ^~
+      |                                                               |
+      |                                                               int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:406:71: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  406 |             DrawText(TextFormat("Players: %d / 15", g.count), 40, 80, 20, WHITE);
+      |                                                                       ^~
+      |                                                                       |
+      |                                                                       int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:406:75: note: in expansion of macro 'WHITE'
+  406 |             DrawText(TextFormat("Players: %d / 15", g.count), 40, 80, 20, WHITE);
+      |                                                                           ^~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:407:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  407 |             DrawText("Creator is judge. Next two joiners are lawyers, the rest spectate.", 40, 110, 20, LIGHTGRAY);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:407:92: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  407 |             DrawText("Creator is judge. Next two joiners are lawyers, the rest spectate.", 40, 110, 20, LIGHTGRAY);
+      |                                                                                            ^~
+      |                                                                                            |
+      |                                                                                            int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:407:101: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  407 |             DrawText("Creator is judge. Next two joiners are lawyers, the rest spectate.", 40, 110, 20, LIGHTGRAY);
+      |                                                                                                     ^~
+      |                                                                                                     |
+      |                                                                                                     int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:175:35: error: incompatible type for argument 5 of 'DrawTextA'
+  175 | #define LIGHTGRAY  CLITERAL(Color){ 200, 200, 200, 255 }   // Light Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:407:105: note: in expansion of macro 'LIGHTGRAY'
+  407 |             DrawText("Creator is judge. Next two joiners are lawyers, the rest spectate.", 40, 110, 20, LIGHTGRAY);
+      |                                                                                                         ^~~~~~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:416:26: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  416 |                 DrawText(line, 60, 150 + i * 24, 20, WHITE);
+      |                          ^~~~
+      |                          |
+      |                          char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:416:32: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  416 |                 DrawText(line, 60, 150 + i * 24, 20, WHITE);
+      |                                ^~
+      |                                |
+      |                                int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:416:50: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  416 |                 DrawText(line, 60, 150 + i * 24, 20, WHITE);
+      |                                                  ^~
+      |                                                  |
+      |                                                  int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:416:54: note: in expansion of macro 'WHITE'
+  416 |                 DrawText(line, 60, 150 + i * 24, 20, WHITE);
+      |                                                      ^~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:419:22: error: expected ';' before 'startBtn'
+  419 |             Rectangle startBtn = {820, 150, 380, 50};
+      |                      ^~~~~~~~~
+      |                      ;
+src/main.c:420:22: error: expected ';' before 'backBtn'
+  420 |             Rectangle backBtn = {820, 220, 380, 44};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:423:24: error: 'startBtn' undeclared (first use in this function)
+  423 |             DrawButton(startBtn, "Start Court", canStart);
+      |                        ^~~~~~~~
+src/main.c:424:24: error: 'backBtn' undeclared (first use in this function)
+  424 |             DrawButton(backBtn, "Leave", true);
+      |                        ^~~~~~~
+src/main.c:425:50: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  425 |             if (g.myRole != ROLE_JUDGE) DrawText("Waiting for the judge to start...", 820, 285, 20, GRAY);
+      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                  |
+      |                                                  char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:425:87: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  425 |             if (g.myRole != ROLE_JUDGE) DrawText("Waiting for the judge to start...", 820, 285, 20, GRAY);
+      |                                                                                       ^~~
+      |                                                                                       |
+      |                                                                                       int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:425:97: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  425 |             if (g.myRole != ROLE_JUDGE) DrawText("Waiting for the judge to start...", 820, 285, 20, GRAY);
+      |                                                                                                 ^~
+      |                                                                                                 |
+      |                                                                                                 int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:425:101: note: in expansion of macro 'GRAY'
+  425 |             if (g.myRole != ROLE_JUDGE) DrawText("Waiting for the judge to start...", 820, 285, 20, GRAY);
+      |                                                                                                     ^~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:444:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  444 |             DrawText("Courtroom", 40, 20, 40, RED);
+      |                      ^~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:444:35: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  444 |             DrawText("Courtroom", 40, 20, 40, RED);
+      |                                   ^~
+      |                                   |
+      |                                   int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:444:43: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  444 |             DrawText("Courtroom", 40, 20, 40, RED);
+      |                                           ^~
+      |                                           |
+      |                                           int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:182:35: error: incompatible type for argument 5 of 'DrawTextA'
+  182 | #define RED        CLITERAL(Color){ 230, 41, 55, 255 }     // Red
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:444:47: note: in expansion of macro 'RED'
+  444 |             DrawText("Courtroom", 40, 20, 40, RED);
+      |                                               ^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:445:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  445 |             DrawText("Defendant: W10L - Windows 10 Lover", 40, 70, 30, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:445:60: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  445 |             DrawText("Defendant: W10L - Windows 10 Lover", 40, 70, 30, WHITE);
+      |                                                            ^~
+      |                                                            |
+      |                                                            int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:445:68: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  445 |             DrawText("Defendant: W10L - Windows 10 Lover", 40, 70, 30, WHITE);
+      |                                                                    ^~
+      |                                                                    |
+      |                                                                    int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:445:72: note: in expansion of macro 'WHITE'
+  445 |             DrawText("Defendant: W10L - Windows 10 Lover", 40, 70, 30, WHITE);
+      |                                                                        ^~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:446:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  446 |             DrawText("Charge: stupidity", 40, 105, 20, YELLOW);
+      |                      ^~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:446:43: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  446 |             DrawText("Charge: stupidity", 40, 105, 20, YELLOW);
+      |                                           ^~
+      |                                           |
+      |                                           int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:446:52: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  446 |             DrawText("Charge: stupidity", 40, 105, 20, YELLOW);
+      |                                                    ^~
+      |                                                    |
+      |                                                    int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:178:35: error: incompatible type for argument 5 of 'DrawTextA'
+  178 | #define YELLOW     CLITERAL(Color){ 253, 249, 0, 255 }     // Yellow
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:446:56: note: in expansion of macro 'YELLOW'
+  446 |             DrawText("Charge: stupidity", 40, 105, 20, YELLOW);
+      |                                                        ^~~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:448:45: error: expected ')' before '{' token
+  448 |             DrawRectangleRounded((Rectangle){40, 140, 1200, 70}, 0.2f, 8, (Color){40, 30, 60, 255});
+      |                                 ~           ^
+      |                                             )
+src/main.c:448:34: error: incompatible type for argument 1 of 'DrawRectangleRounded'
+  448 |             DrawRectangleRounded((Rectangle){40, 140, 1200, 70}, 0.2f, 8, (Color){40, 30, 60, 255});
+      |                                  ^~~~~~~~~~~
+      |                                  |
+      |                                  WINBOOL (*)(struct HDC__ *, int,  int,  int,  int) {aka int (*)(struct HDC__ *, int,  int,  int,  int)}
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:1274:43: note: expected 'Rectangle' but argument is of type 'WINBOOL (*)(struct HDC__ *, int,  int,  int,  int)' {aka 'int (*)(struct HDC__ *, int,  int,  int,  int)'}
+ 1274 | RLAPI void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color);              // Draw rectangle with rounded edges
+      |                                 ~~~~~~~~~~^~~
+src/main.c:448:13: error: too few arguments to function 'DrawRectangleRounded'; expected 4, have 1
+  448 |             DrawRectangleRounded((Rectangle){40, 140, 1200, 70}, 0.2f, 8, (Color){40, 30, 60, 255});
+      |             ^~~~~~~~~~~~~~~~~~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:1274:12: note: declared here
+ 1274 | RLAPI void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color);              // Draw rectangle with rounded edges
+      |            ^~~~~~~~~~~~~~~~~~~~
+src/main.c:449:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  449 |             DrawText("W10L stands in the defendant box, proudly defending an unsupported operating system.", 60, 165, 20, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:449:110: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  449 |             DrawText("W10L stands in the defendant box, proudly defending an unsupported operating system.", 60, 165, 20, WHITE);
+      |                                                                                                              ^~
+      |                                                                                                              |
+      |                                                                                                              int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:449:119: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  449 |             DrawText("W10L stands in the defendant box, proudly defending an unsupported operating system.", 60, 165, 20, WHITE);
+      |                                                                                                                       ^~
+      |                                                                                                                       |
+      |                                                                                                                       int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:449:123: note: in expansion of macro 'WHITE'
+  449 |             DrawText("W10L stands in the defendant box, proudly defending an unsupported operating system.", 60, 165, 20, WHITE);
+      |                                                                                                                           ^~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:451:22: error: expected ';' before 'lawyerPanels'
+  451 |             Rectangle lawyerPanels[2] = { {40, 240, 580, 300}, {660, 240, 580, 300} };
+      |                      ^~~~~~~~~~~~~
+      |                      ;
+src/main.c:456:26: error: expected ';' before 'panel'
+  456 |                 Rectangle panel = lawyerPanels[i];
+      |                          ^~~~~~
+      |                          ;
+src/main.c:458:38: error: 'panel' undeclared (first use in this function)
+  458 |                 DrawRectangleRounded(panel, 0.06f, 8, (Color){30, 30, 45, 255});
+      |                                      ^~~~~
+src/main.c:462:37: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  462 |                     DrawText(g.lname[i], (int)panel.x + 15, (int)panel.y + 12, 24, RED);
+      |                              ~~~~~~~^~~
+      |                                     |
+      |                                     char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:462:80: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  462 |                     DrawText(g.lname[i], (int)panel.x + 15, (int)panel.y + 12, 24, RED);
+      |                                                                                ^~
+      |                                                                                |
+      |                                                                                int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:182:35: error: incompatible type for argument 5 of 'DrawTextA'
+  182 | #define RED        CLITERAL(Color){ 230, 41, 55, 255 }     // Red
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:462:84: note: in expansion of macro 'RED'
+  462 |                     DrawText(g.lname[i], (int)panel.x + 15, (int)panel.y + 12, 24, RED);
+      |                                                                                    ^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:464:35: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  464 |                     else DrawText("Waiting for roast...", (int)panel.x + 15, (int)panel.y + 50, 20, GRAY);
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:464:97: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  464 |                     else DrawText("Waiting for roast...", (int)panel.x + 15, (int)panel.y + 50, 20, GRAY);
+      |                                                                                                 ^~
+      |                                                                                                 |
+      |                                                                                                 int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:464:101: note: in expansion of macro 'GRAY'
+  464 |                     else DrawText("Waiting for roast...", (int)panel.x + 15, (int)panel.y + 50, 20, GRAY);
+      |                                                                                                     ^~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:466:30: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  466 |                     DrawText("Missing lawyer", (int)panel.x + 15, (int)panel.y + 12, 24, GRAY);
+      |                              ^~~~~~~~~~~~~~~~
+      |                              |
+      |                              char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:466:86: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  466 |                     DrawText("Missing lawyer", (int)panel.x + 15, (int)panel.y + 12, 24, GRAY);
+      |                                                                                      ^~
+      |                                                                                      |
+      |                                                                                      int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:466:90: note: in expansion of macro 'GRAY'
+  466 |                     DrawText("Missing lawyer", (int)panel.x + 15, (int)panel.y + 12, 24, GRAY);
+      |                                                                                          ^~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:473:22: error: expected ';' before 'inputBox'
+  473 |             Rectangle inputBox = {40, 560, 760, 44};
+      |                      ^~~~~~~~~
+      |                      ;
+src/main.c:474:22: error: expected ';' before 'submitBtn'
+  474 |             Rectangle submitBtn = {820, 560, 200, 44};
+      |                      ^~~~~~~~~~
+      |                      ;
+src/main.c:475:22: error: expected ';' before 'backBtn'
+  475 |             Rectangle backBtn = {1040, 560, 200, 44};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:477:26: error: 'inputBox' undeclared (first use in this function); did you mean 'inputRoast'?
+  477 |             DrawInputBox(inputBox, canType ? inputRoast : "", canType);
+      |                          ^~~~~~~~
+      |                          inputRoast
+src/main.c:478:24: error: 'submitBtn' undeclared (first use in this function)
+  478 |             DrawButton(submitBtn, "Submit Roast", canType && strlen(inputRoast) > 0 && !net.busy);
+      |                        ^~~~~~~~~
+src/main.c:491:30: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  491 |                     DrawText("Judge decision:", 40, 620, 24, YELLOW);
+      |                              ^~~~~~~~~~~~~~~~~
+      |                              |
+      |                              char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:491:49: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  491 |                     DrawText("Judge decision:", 40, 620, 24, YELLOW);
+      |                                                 ^~
+      |                                                 |
+      |                                                 int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:491:58: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  491 |                     DrawText("Judge decision:", 40, 620, 24, YELLOW);
+      |                                                          ^~
+      |                                                          |
+      |                                                          int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:178:35: error: incompatible type for argument 5 of 'DrawTextA'
+  178 | #define YELLOW     CLITERAL(Color){ 253, 249, 0, 255 }     // Yellow
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:491:62: note: in expansion of macro 'YELLOW'
+  491 |                     DrawText("Judge decision:", 40, 620, 24, YELLOW);
+      |                                                              ^~~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:492:30: error: expected ';' before 'j0'
+  492 |                     Rectangle j0 = {240, 610, 300, 44};
+      |                              ^~~
+      |                              ;
+src/main.c:493:30: error: expected ';' before 'j1'
+  493 |                     Rectangle j1 = {560, 610, 300, 44};
+      |                              ^~~
+      |                              ;
+src/main.c:497:32: error: 'j0' undeclared (first use in this function); did you mean 'l0'?
+  497 |                     DrawButton(j0, l0, !net.busy);
+      |                                ^~
+      |                                l0
+src/main.c:498:32: error: 'j1' undeclared (first use in this function); did you mean 'l1'?
+  498 |                     DrawButton(j1, l1, !net.busy);
+      |                                ^~
+      |                                l1
+src/main.c:510:30: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  510 |                     DrawText("Waiting for the judge's decision...", 40, 620, 20, GRAY);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                              |
+      |                              char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:510:69: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  510 |                     DrawText("Waiting for the judge's decision...", 40, 620, 20, GRAY);
+      |                                                                     ^~
+      |                                                                     |
+      |                                                                     int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:510:78: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  510 |                     DrawText("Waiting for the judge's decision...", 40, 620, 20, GRAY);
+      |                                                                              ^~
+      |                                                                              |
+      |                                                                              int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:510:82: note: in expansion of macro 'GRAY'
+  510 |                     DrawText("Waiting for the judge's decision...", 40, 620, 20, GRAY);
+      |                                                                                  ^~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:515:26: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  515 |                 DrawText(result, 40, 620, 24, GREEN);
+      |                          ^~~~~~
+      |                          |
+      |                          char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:515:34: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  515 |                 DrawText(result, 40, 620, 24, GREEN);
+      |                                  ^~
+      |                                  |
+      |                                  int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:515:43: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  515 |                 DrawText(result, 40, 620, 24, GREEN);
+      |                                           ^~
+      |                                           |
+      |                                           int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:184:35: error: incompatible type for argument 5 of 'DrawTextA'
+  184 | #define GREEN      CLITERAL(Color){ 0, 228, 48, 255 }      // Green
+      |                                   ^~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:515:47: note: in expansion of macro 'GREEN'
+  515 |                 DrawText(result, 40, 620, 24, GREEN);
+      |                                               ^~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:517:26: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  517 |                 DrawText("Need two lawyers in the lobby.", 40, 620, 20, GRAY);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                          |
+      |                          char *
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:517:60: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  517 |                 DrawText("Need two lawyers in the lobby.", 40, 620, 20, GRAY);
+      |                                                            ^~
+      |                                                            |
+      |                                                            int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:517:69: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  517 |                 DrawText("Need two lawyers in the lobby.", 40, 620, 20, GRAY);
+      |                                                                     ^~
+      |                                                                     |
+      |                                                                     int
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw64/raylib-5.5_win64_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:517:73: note: in expansion of macro 'GRAY'
+  517 |                 DrawText("Need two lawyers in the lobby.", 40, 620, 20, GRAY);
+      |                                                                         ^~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:534:5: error: too few arguments to function 'CloseWindow'; expected 1, have 0
+  534 |     CloseWindow();
+      |     ^~~~~~~~~~~
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/winuser.h:2282:29: note: declared here
+ 2282 |   WINUSERAPI WINBOOL WINAPI CloseWindow (HWND hWnd);
+      |                             ^~~~~~~~~~~
+[FAIL] win64
+[build] win32
+In file included from /usr/i686-w64-mingw32/sys-root/mingw/include/windows.h:71,
+                 from /usr/i686-w64-mingw32/sys-root/mingw/include/winsock2.h:23,
+                 from /usr/i686-w64-mingw32/sys-root/mingw/include/curl/curl.h:82,
+                 from src/main.c:4:
+/usr/i686-w64-mingw32/sys-root/mingw/include/wingdi.h:3251:28: error: 'Rectangle' redeclared as different kind of symbol
+ 3251 |   WINGDIAPI WINBOOL WINAPI Rectangle(HDC hdc,int left,int top,int right,int bottom);
+      |                            ^~~~~~~~~
+In file included from src/main.c:3:
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:260:3: note: previous declaration of 'Rectangle' with type 'Rectangle'
+  260 | } Rectangle;
+      |   ^~~~~~~~~
+In file included from /usr/i686-w64-mingw32/sys-root/mingw/include/windows.h:72:
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:2282:29: error: conflicting types for 'CloseWindow'; have 'WINBOOL(struct HWND__ *)' {aka 'int(struct HWND__ *)'}
+ 2282 |   WINUSERAPI WINBOOL WINAPI CloseWindow (HWND hWnd);
+      |                             ^~~~~~~~~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:969:12: note: previous declaration of 'CloseWindow' with type 'void(void)'
+  969 | RLAPI void CloseWindow(void);                                     // Close window and unload OpenGL context
+      |            ^~~~~~~~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3761:25: error: conflicting types for 'ShowCursor'; have 'int(WINBOOL)' {aka 'int(int)'}
+ 3761 |   WINUSERAPI int WINAPI ShowCursor(WINBOOL bShow);
+      |                         ^~~~~~~~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:1019:12: note: previous declaration of 'ShowCursor' with type 'void(void)'
+ 1019 | RLAPI void ShowCursor(void);                                      // Shows cursor
+      |            ^~~~~~~~~~
+src/main.c:204:23: error: expected declaration specifiers or '...' before 'Rectangle'
+  204 | static bool ButtonHit(Rectangle r) {
+      |                       ^~~~~~~~~
+src/main.c:208:24: error: expected declaration specifiers or '...' before 'Rectangle'
+  208 | static void DrawButton(Rectangle r, const char *text, bool enabled) {
+      |                        ^~~~~~~~~
+src/main.c:235:26: error: expected declaration specifiers or '...' before 'Rectangle'
+  235 | static void DrawInputBox(Rectangle r, const char *buffer, bool active) {
+      |                          ^~~~~~~~~
+src/main.c: In function 'DrawTextWrapped':
+src/main.c:253:18: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  253 |         DrawText(line, x, lineY, spacing, color);
+      |                  ^~~~
+      |                  |
+      |                  char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+In file included from /usr/i686-w64-mingw32/sys-root/mingw/include/minwindef.h:163,
+                 from /usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:9,
+                 from /usr/i686-w64-mingw32/sys-root/mingw/include/windows.h:69:
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:253:24: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  253 |         DrawText(line, x, lineY, spacing, color);
+      |                        ^
+      |                        |
+      |                        int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:253:34: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  253 |         DrawText(line, x, lineY, spacing, color);
+      |                                  ^~~~~~~
+      |                                  |
+      |                                  int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+src/main.c:253:43: error: incompatible type for argument 5 of 'DrawTextA'
+  253 |         DrawText(line, x, lineY, spacing, color);
+      |                                           ^~~~~
+      |                                           |
+      |                                           Color
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c: In function 'main':
+src/main.c:353:22: error: expected ';' before 'nameBox'
+  353 |             Rectangle nameBox = {440, 230, 400, 44};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:354:22: error: expected ';' before 'codeBox'
+  354 |             Rectangle codeBox = {440, 300, 400, 44};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:355:22: error: expected ';' before 'capImg'
+  355 |             Rectangle capImg = {440, 370, 200, 70};
+      |                      ^~~~~~~
+      |                      ;
+src/main.c:356:22: error: expected ';' before 'capBox'
+  356 |             Rectangle capBox = {660, 383, 180, 44};
+      |                      ^~~~~~~
+      |                      ;
+src/main.c:357:22: error: expected ';' before 'createBtn'
+  357 |             Rectangle createBtn = {440, 470, 195, 50};
+      |                      ^~~~~~~~~~
+      |                      ;
+src/main.c:358:22: error: expected ';' before 'joinBtn'
+  358 |             Rectangle joinBtn = {645, 470, 195, 50};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:360:17: error: implicit declaration of function 'ButtonHit' [-Wimplicit-function-declaration]
+  360 |             if (ButtonHit(nameBox)) focus = 0;
+      |                 ^~~~~~~~~
+src/main.c:360:27: error: 'nameBox' undeclared (first use in this function)
+  360 |             if (ButtonHit(nameBox)) focus = 0;
+      |                           ^~~~~~~
+src/main.c:360:27: note: each undeclared identifier is reported only once for each function it appears in
+src/main.c:361:27: error: 'codeBox' undeclared (first use in this function)
+  361 |             if (ButtonHit(codeBox)) focus = 1;
+      |                           ^~~~~~~
+src/main.c:362:27: error: 'capBox' undeclared (first use in this function); did you mean 'capTex'?
+  362 |             if (ButtonHit(capBox)) focus = 2;
+      |                           ^~~~~~
+      |                           capTex
+src/main.c:364:27: error: 'capImg' undeclared (first use in this function); did you mean 'capId'?
+  364 |             if (ButtonHit(capImg)) wantCaptcha = true;
+      |                           ^~~~~~
+      |                           capId
+src/main.c:372:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  372 |             DrawText("W10L courtroom roast battle", 370, 90, 40, RED);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:372:53: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  372 |             DrawText("W10L courtroom roast battle", 370, 90, 40, RED);
+      |                                                     ^~~
+      |                                                     |
+      |                                                     int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:372:62: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  372 |             DrawText("W10L courtroom roast battle", 370, 90, 40, RED);
+      |                                                              ^~
+      |                                                              |
+      |                                                              int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:182:35: error: incompatible type for argument 5 of 'DrawTextA'
+  182 | #define RED        CLITERAL(Color){ 230, 41, 55, 255 }     // Red
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:372:66: note: in expansion of macro 'RED'
+  372 |             DrawText("W10L courtroom roast battle", 370, 90, 40, RED);
+      |                                                                  ^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:373:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  373 |             DrawText("Online client", 560, 150, 20, GRAY);
+      |                      ^~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:373:39: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  373 |             DrawText("Online client", 560, 150, 20, GRAY);
+      |                                       ^~~
+      |                                       |
+      |                                       int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:373:49: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  373 |             DrawText("Online client", 560, 150, 20, GRAY);
+      |                                                 ^~
+      |                                                 |
+      |                                                 int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:373:53: note: in expansion of macro 'GRAY'
+  373 |             DrawText("Online client", 560, 150, 20, GRAY);
+      |                                                     ^~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:374:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  374 |             DrawText("Username", 440, 205, 20, WHITE);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:374:34: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  374 |             DrawText("Username", 440, 205, 20, WHITE);
+      |                                  ^~~
+      |                                  |
+      |                                  int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:374:44: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  374 |             DrawText("Username", 440, 205, 20, WHITE);
+      |                                            ^~
+      |                                            |
+      |                                            int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:374:48: note: in expansion of macro 'WHITE'
+  374 |             DrawText("Username", 440, 205, 20, WHITE);
+      |                                                ^~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:375:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  375 |             DrawText("Lobby code (blank = create)", 440, 275, 20, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:375:53: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  375 |             DrawText("Lobby code (blank = create)", 440, 275, 20, WHITE);
+      |                                                     ^~~
+      |                                                     |
+      |                                                     int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:375:63: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  375 |             DrawText("Lobby code (blank = create)", 440, 275, 20, WHITE);
+      |                                                               ^~
+      |                                                               |
+      |                                                               int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:375:67: note: in expansion of macro 'WHITE'
+  375 |             DrawText("Lobby code (blank = create)", 440, 275, 20, WHITE);
+      |                                                                   ^~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:376:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  376 |             DrawText("Captcha (click image to refresh)", 440, 345, 20, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:376:58: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  376 |             DrawText("Captcha (click image to refresh)", 440, 345, 20, WHITE);
+      |                                                          ^~~
+      |                                                          |
+      |                                                          int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:376:68: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  376 |             DrawText("Captcha (click image to refresh)", 440, 345, 20, WHITE);
+      |                                                                    ^~
+      |                                                                    |
+      |                                                                    int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:376:72: note: in expansion of macro 'WHITE'
+  376 |             DrawText("Captcha (click image to refresh)", 440, 345, 20, WHITE);
+      |                                                                        ^~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:378:13: error: implicit declaration of function 'DrawInputBox' [-Wimplicit-function-declaration]
+  378 |             DrawInputBox(nameBox, username, focus == 0);
+      |             ^~~~~~~~~~~~
+src/main.c:381:59: error: expected ')' before '{' token
+  381 |             if (hasCap) DrawTexturePro(capTex, (Rectangle){0, 0, (float)capTex.width, (float)capTex.height}, capImg, (Vector2){0, 0}, 0, WHITE);
+      |                                       ~                   ^
+      |                                                           )
+src/main.c:381:48: error: incompatible type for argument 2 of 'DrawTexturePro'
+  381 |             if (hasCap) DrawTexturePro(capTex, (Rectangle){0, 0, (float)capTex.width, (float)capTex.height}, capImg, (Vector2){0, 0}, 0, WHITE);
+      |                                                ^~~~~~~~~~~
+      |                                                |
+      |                                                WINBOOL (__attribute__((stdcall)) *)(struct HDC__ *, int,  int,  int,  int) {aka int (__attribute__((stdcall)) *)(struct HDC__ *, int,  int,  int,  int)}
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:1433:56: note: expected 'Rectangle' but argument is of type 'WINBOOL (__attribute__((stdcall)) *)(struct HDC__ *, int,  int,  int,  int)' {aka 'int (__attribute__((stdcall)) *)(struct HDC__ *, int,  int,  int,  int)'}
+ 1433 | RLAPI void DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color tint); // Draw a part of a texture defined by a rectangle with 'pro' parameters
+      |                                              ~~~~~~~~~~^~~~~~
+src/main.c:381:25: error: too few arguments to function 'DrawTexturePro'; expected 6, have 2
+  381 |             if (hasCap) DrawTexturePro(capTex, (Rectangle){0, 0, (float)capTex.width, (float)capTex.height}, capImg, (Vector2){0, 0}, 0, WHITE);
+      |                         ^~~~~~~~~~~~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:1433:12: note: declared here
+ 1433 | RLAPI void DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color tint); // Draw a part of a texture defined by a rectangle with 'pro' parameters
+      |            ^~~~~~~~~~~~~~
+src/main.c:382:27: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  382 |             else DrawText("loading...", 480, 395, 20, GRAY);
+      |                           ^~~~~~~~~~~~
+      |                           |
+      |                           char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:382:41: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  382 |             else DrawText("loading...", 480, 395, 20, GRAY);
+      |                                         ^~~
+      |                                         |
+      |                                         int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:382:51: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  382 |             else DrawText("loading...", 480, 395, 20, GRAY);
+      |                                                   ^~
+      |                                                   |
+      |                                                   int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:382:55: note: in expansion of macro 'GRAY'
+  382 |             else DrawText("loading...", 480, 395, 20, GRAY);
+      |                                                       ^~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:386:13: error: implicit declaration of function 'DrawButton'; did you mean 'DrawIcon'? [-Wimplicit-function-declaration]
+  386 |             DrawButton(createBtn, "Create Lobby", ready);
+      |             ^~~~~~~~~~
+      |             DrawIcon
+src/main.c:386:24: error: 'createBtn' undeclared (first use in this function); did you mean 'CreatePen'?
+  386 |             DrawButton(createBtn, "Create Lobby", ready);
+      |                        ^~~~~~~~~
+      |                        CreatePen
+src/main.c:387:24: error: 'joinBtn' undeclared (first use in this function)
+  387 |             DrawButton(joinBtn, "Join Lobby", ready && strlen(lobbyCode) > 0);
+      |                        ^~~~~~~
+src/main.c:388:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  388 |             DrawText(message, 440, 545, 20, YELLOW);
+      |                      ^~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:388:31: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  388 |             DrawText(message, 440, 545, 20, YELLOW);
+      |                               ^~~
+      |                               |
+      |                               int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:388:41: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  388 |             DrawText(message, 440, 545, 20, YELLOW);
+      |                                         ^~
+      |                                         |
+      |                                         int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:178:35: error: incompatible type for argument 5 of 'DrawTextA'
+  178 | #define YELLOW     CLITERAL(Color){ 253, 249, 0, 255 }     // Yellow
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:388:45: note: in expansion of macro 'YELLOW'
+  388 |             DrawText(message, 440, 545, 20, YELLOW);
+      |                                             ^~~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:404:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  404 |             DrawText("Lobby", 40, 30, 40, RED);
+      |                      ^~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:404:31: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  404 |             DrawText("Lobby", 40, 30, 40, RED);
+      |                               ^~
+      |                               |
+      |                               int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:404:39: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  404 |             DrawText("Lobby", 40, 30, 40, RED);
+      |                                       ^~
+      |                                       |
+      |                                       int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:182:35: error: incompatible type for argument 5 of 'DrawTextA'
+  182 | #define RED        CLITERAL(Color){ 230, 41, 55, 255 }     // Red
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:404:43: note: in expansion of macro 'RED'
+  404 |             DrawText("Lobby", 40, 30, 40, RED);
+      |                                           ^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:405:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  405 |             DrawText(TextFormat("Code: %s", lobbyCode), 200, 40, 30, YELLOW);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      const char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'const char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:405:57: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  405 |             DrawText(TextFormat("Code: %s", lobbyCode), 200, 40, 30, YELLOW);
+      |                                                         ^~~
+      |                                                         |
+      |                                                         int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:405:66: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  405 |             DrawText(TextFormat("Code: %s", lobbyCode), 200, 40, 30, YELLOW);
+      |                                                                  ^~
+      |                                                                  |
+      |                                                                  int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:178:35: error: incompatible type for argument 5 of 'DrawTextA'
+  178 | #define YELLOW     CLITERAL(Color){ 253, 249, 0, 255 }     // Yellow
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:405:70: note: in expansion of macro 'YELLOW'
+  405 |             DrawText(TextFormat("Code: %s", lobbyCode), 200, 40, 30, YELLOW);
+      |                                                                      ^~~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:406:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  406 |             DrawText(TextFormat("Players: %d / 15", g.count), 40, 80, 20, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      const char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'const char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:406:63: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  406 |             DrawText(TextFormat("Players: %d / 15", g.count), 40, 80, 20, WHITE);
+      |                                                               ^~
+      |                                                               |
+      |                                                               int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:406:71: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  406 |             DrawText(TextFormat("Players: %d / 15", g.count), 40, 80, 20, WHITE);
+      |                                                                       ^~
+      |                                                                       |
+      |                                                                       int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:406:75: note: in expansion of macro 'WHITE'
+  406 |             DrawText(TextFormat("Players: %d / 15", g.count), 40, 80, 20, WHITE);
+      |                                                                           ^~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:407:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  407 |             DrawText("Creator is judge. Next two joiners are lawyers, the rest spectate.", 40, 110, 20, LIGHTGRAY);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:407:92: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  407 |             DrawText("Creator is judge. Next two joiners are lawyers, the rest spectate.", 40, 110, 20, LIGHTGRAY);
+      |                                                                                            ^~
+      |                                                                                            |
+      |                                                                                            int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:407:101: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  407 |             DrawText("Creator is judge. Next two joiners are lawyers, the rest spectate.", 40, 110, 20, LIGHTGRAY);
+      |                                                                                                     ^~
+      |                                                                                                     |
+      |                                                                                                     int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:175:35: error: incompatible type for argument 5 of 'DrawTextA'
+  175 | #define LIGHTGRAY  CLITERAL(Color){ 200, 200, 200, 255 }   // Light Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:407:105: note: in expansion of macro 'LIGHTGRAY'
+  407 |             DrawText("Creator is judge. Next two joiners are lawyers, the rest spectate.", 40, 110, 20, LIGHTGRAY);
+      |                                                                                                         ^~~~~~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:416:26: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  416 |                 DrawText(line, 60, 150 + i * 24, 20, WHITE);
+      |                          ^~~~
+      |                          |
+      |                          char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:416:32: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  416 |                 DrawText(line, 60, 150 + i * 24, 20, WHITE);
+      |                                ^~
+      |                                |
+      |                                int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:416:50: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  416 |                 DrawText(line, 60, 150 + i * 24, 20, WHITE);
+      |                                                  ^~
+      |                                                  |
+      |                                                  int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:416:54: note: in expansion of macro 'WHITE'
+  416 |                 DrawText(line, 60, 150 + i * 24, 20, WHITE);
+      |                                                      ^~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:419:22: error: expected ';' before 'startBtn'
+  419 |             Rectangle startBtn = {820, 150, 380, 50};
+      |                      ^~~~~~~~~
+      |                      ;
+src/main.c:420:22: error: expected ';' before 'backBtn'
+  420 |             Rectangle backBtn = {820, 220, 380, 44};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:423:24: error: 'startBtn' undeclared (first use in this function)
+  423 |             DrawButton(startBtn, "Start Court", canStart);
+      |                        ^~~~~~~~
+src/main.c:424:24: error: 'backBtn' undeclared (first use in this function)
+  424 |             DrawButton(backBtn, "Leave", true);
+      |                        ^~~~~~~
+src/main.c:425:50: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  425 |             if (g.myRole != ROLE_JUDGE) DrawText("Waiting for the judge to start...", 820, 285, 20, GRAY);
+      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                  |
+      |                                                  char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:425:87: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  425 |             if (g.myRole != ROLE_JUDGE) DrawText("Waiting for the judge to start...", 820, 285, 20, GRAY);
+      |                                                                                       ^~~
+      |                                                                                       |
+      |                                                                                       int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:425:97: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  425 |             if (g.myRole != ROLE_JUDGE) DrawText("Waiting for the judge to start...", 820, 285, 20, GRAY);
+      |                                                                                                 ^~
+      |                                                                                                 |
+      |                                                                                                 int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:425:101: note: in expansion of macro 'GRAY'
+  425 |             if (g.myRole != ROLE_JUDGE) DrawText("Waiting for the judge to start...", 820, 285, 20, GRAY);
+      |                                                                                                     ^~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:444:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  444 |             DrawText("Courtroom", 40, 20, 40, RED);
+      |                      ^~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:444:35: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  444 |             DrawText("Courtroom", 40, 20, 40, RED);
+      |                                   ^~
+      |                                   |
+      |                                   int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:444:43: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  444 |             DrawText("Courtroom", 40, 20, 40, RED);
+      |                                           ^~
+      |                                           |
+      |                                           int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:182:35: error: incompatible type for argument 5 of 'DrawTextA'
+  182 | #define RED        CLITERAL(Color){ 230, 41, 55, 255 }     // Red
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:444:47: note: in expansion of macro 'RED'
+  444 |             DrawText("Courtroom", 40, 20, 40, RED);
+      |                                               ^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:445:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  445 |             DrawText("Defendant: W10L - Windows 10 Lover", 40, 70, 30, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:445:60: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  445 |             DrawText("Defendant: W10L - Windows 10 Lover", 40, 70, 30, WHITE);
+      |                                                            ^~
+      |                                                            |
+      |                                                            int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:445:68: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  445 |             DrawText("Defendant: W10L - Windows 10 Lover", 40, 70, 30, WHITE);
+      |                                                                    ^~
+      |                                                                    |
+      |                                                                    int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:445:72: note: in expansion of macro 'WHITE'
+  445 |             DrawText("Defendant: W10L - Windows 10 Lover", 40, 70, 30, WHITE);
+      |                                                                        ^~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:446:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  446 |             DrawText("Charge: stupidity", 40, 105, 20, YELLOW);
+      |                      ^~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:446:43: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  446 |             DrawText("Charge: stupidity", 40, 105, 20, YELLOW);
+      |                                           ^~
+      |                                           |
+      |                                           int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:446:52: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  446 |             DrawText("Charge: stupidity", 40, 105, 20, YELLOW);
+      |                                                    ^~
+      |                                                    |
+      |                                                    int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:178:35: error: incompatible type for argument 5 of 'DrawTextA'
+  178 | #define YELLOW     CLITERAL(Color){ 253, 249, 0, 255 }     // Yellow
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:446:56: note: in expansion of macro 'YELLOW'
+  446 |             DrawText("Charge: stupidity", 40, 105, 20, YELLOW);
+      |                                                        ^~~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:448:45: error: expected ')' before '{' token
+  448 |             DrawRectangleRounded((Rectangle){40, 140, 1200, 70}, 0.2f, 8, (Color){40, 30, 60, 255});
+      |                                 ~           ^
+      |                                             )
+src/main.c:448:34: error: incompatible type for argument 1 of 'DrawRectangleRounded'
+  448 |             DrawRectangleRounded((Rectangle){40, 140, 1200, 70}, 0.2f, 8, (Color){40, 30, 60, 255});
+      |                                  ^~~~~~~~~~~
+      |                                  |
+      |                                  WINBOOL (__attribute__((stdcall)) *)(struct HDC__ *, int,  int,  int,  int) {aka int (__attribute__((stdcall)) *)(struct HDC__ *, int,  int,  int,  int)}
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:1274:43: note: expected 'Rectangle' but argument is of type 'WINBOOL (__attribute__((stdcall)) *)(struct HDC__ *, int,  int,  int,  int)' {aka 'int (__attribute__((stdcall)) *)(struct HDC__ *, int,  int,  int,  int)'}
+ 1274 | RLAPI void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color);              // Draw rectangle with rounded edges
+      |                                 ~~~~~~~~~~^~~
+src/main.c:448:13: error: too few arguments to function 'DrawRectangleRounded'; expected 4, have 1
+  448 |             DrawRectangleRounded((Rectangle){40, 140, 1200, 70}, 0.2f, 8, (Color){40, 30, 60, 255});
+      |             ^~~~~~~~~~~~~~~~~~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:1274:12: note: declared here
+ 1274 | RLAPI void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color);              // Draw rectangle with rounded edges
+      |            ^~~~~~~~~~~~~~~~~~~~
+src/main.c:449:22: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  449 |             DrawText("W10L stands in the defendant box, proudly defending an unsupported operating system.", 60, 165, 20, WHITE);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:449:110: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  449 |             DrawText("W10L stands in the defendant box, proudly defending an unsupported operating system.", 60, 165, 20, WHITE);
+      |                                                                                                              ^~
+      |                                                                                                              |
+      |                                                                                                              int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:449:119: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  449 |             DrawText("W10L stands in the defendant box, proudly defending an unsupported operating system.", 60, 165, 20, WHITE);
+      |                                                                                                                       ^~
+      |                                                                                                                       |
+      |                                                                                                                       int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:197:35: error: incompatible type for argument 5 of 'DrawTextA'
+  197 | #define WHITE      CLITERAL(Color){ 255, 255, 255, 255 }   // White
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:449:123: note: in expansion of macro 'WHITE'
+  449 |             DrawText("W10L stands in the defendant box, proudly defending an unsupported operating system.", 60, 165, 20, WHITE);
+      |                                                                                                                           ^~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:451:22: error: expected ';' before 'lawyerPanels'
+  451 |             Rectangle lawyerPanels[2] = { {40, 240, 580, 300}, {660, 240, 580, 300} };
+      |                      ^~~~~~~~~~~~~
+      |                      ;
+src/main.c:456:26: error: expected ';' before 'panel'
+  456 |                 Rectangle panel = lawyerPanels[i];
+      |                          ^~~~~~
+      |                          ;
+src/main.c:458:38: error: 'panel' undeclared (first use in this function)
+  458 |                 DrawRectangleRounded(panel, 0.06f, 8, (Color){30, 30, 45, 255});
+      |                                      ^~~~~
+src/main.c:462:37: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  462 |                     DrawText(g.lname[i], (int)panel.x + 15, (int)panel.y + 12, 24, RED);
+      |                              ~~~~~~~^~~
+      |                                     |
+      |                                     char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:462:80: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  462 |                     DrawText(g.lname[i], (int)panel.x + 15, (int)panel.y + 12, 24, RED);
+      |                                                                                ^~
+      |                                                                                |
+      |                                                                                int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:182:35: error: incompatible type for argument 5 of 'DrawTextA'
+  182 | #define RED        CLITERAL(Color){ 230, 41, 55, 255 }     // Red
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:462:84: note: in expansion of macro 'RED'
+  462 |                     DrawText(g.lname[i], (int)panel.x + 15, (int)panel.y + 12, 24, RED);
+      |                                                                                    ^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:464:35: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  464 |                     else DrawText("Waiting for roast...", (int)panel.x + 15, (int)panel.y + 50, 20, GRAY);
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:464:97: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  464 |                     else DrawText("Waiting for roast...", (int)panel.x + 15, (int)panel.y + 50, 20, GRAY);
+      |                                                                                                 ^~
+      |                                                                                                 |
+      |                                                                                                 int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:464:101: note: in expansion of macro 'GRAY'
+  464 |                     else DrawText("Waiting for roast...", (int)panel.x + 15, (int)panel.y + 50, 20, GRAY);
+      |                                                                                                     ^~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:466:30: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  466 |                     DrawText("Missing lawyer", (int)panel.x + 15, (int)panel.y + 12, 24, GRAY);
+      |                              ^~~~~~~~~~~~~~~~
+      |                              |
+      |                              char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:466:86: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  466 |                     DrawText("Missing lawyer", (int)panel.x + 15, (int)panel.y + 12, 24, GRAY);
+      |                                                                                      ^~
+      |                                                                                      |
+      |                                                                                      int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:466:90: note: in expansion of macro 'GRAY'
+  466 |                     DrawText("Missing lawyer", (int)panel.x + 15, (int)panel.y + 12, 24, GRAY);
+      |                                                                                          ^~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:473:22: error: expected ';' before 'inputBox'
+  473 |             Rectangle inputBox = {40, 560, 760, 44};
+      |                      ^~~~~~~~~
+      |                      ;
+src/main.c:474:22: error: expected ';' before 'submitBtn'
+  474 |             Rectangle submitBtn = {820, 560, 200, 44};
+      |                      ^~~~~~~~~~
+      |                      ;
+src/main.c:475:22: error: expected ';' before 'backBtn'
+  475 |             Rectangle backBtn = {1040, 560, 200, 44};
+      |                      ^~~~~~~~
+      |                      ;
+src/main.c:477:26: error: 'inputBox' undeclared (first use in this function); did you mean 'inputRoast'?
+  477 |             DrawInputBox(inputBox, canType ? inputRoast : "", canType);
+      |                          ^~~~~~~~
+      |                          inputRoast
+src/main.c:478:24: error: 'submitBtn' undeclared (first use in this function)
+  478 |             DrawButton(submitBtn, "Submit Roast", canType && strlen(inputRoast) > 0 && !net.busy);
+      |                        ^~~~~~~~~
+src/main.c:491:30: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  491 |                     DrawText("Judge decision:", 40, 620, 24, YELLOW);
+      |                              ^~~~~~~~~~~~~~~~~
+      |                              |
+      |                              char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:491:49: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  491 |                     DrawText("Judge decision:", 40, 620, 24, YELLOW);
+      |                                                 ^~
+      |                                                 |
+      |                                                 int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:491:58: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  491 |                     DrawText("Judge decision:", 40, 620, 24, YELLOW);
+      |                                                          ^~
+      |                                                          |
+      |                                                          int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:178:35: error: incompatible type for argument 5 of 'DrawTextA'
+  178 | #define YELLOW     CLITERAL(Color){ 253, 249, 0, 255 }     // Yellow
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:491:62: note: in expansion of macro 'YELLOW'
+  491 |                     DrawText("Judge decision:", 40, 620, 24, YELLOW);
+      |                                                              ^~~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:492:30: error: expected ';' before 'j0'
+  492 |                     Rectangle j0 = {240, 610, 300, 44};
+      |                              ^~~
+      |                              ;
+src/main.c:493:30: error: expected ';' before 'j1'
+  493 |                     Rectangle j1 = {560, 610, 300, 44};
+      |                              ^~~
+      |                              ;
+src/main.c:497:32: error: 'j0' undeclared (first use in this function); did you mean 'l0'?
+  497 |                     DrawButton(j0, l0, !net.busy);
+      |                                ^~
+      |                                l0
+src/main.c:498:32: error: 'j1' undeclared (first use in this function); did you mean 'l1'?
+  498 |                     DrawButton(j1, l1, !net.busy);
+      |                                ^~
+      |                                l1
+src/main.c:510:30: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  510 |                     DrawText("Waiting for the judge's decision...", 40, 620, 20, GRAY);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                              |
+      |                              char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:510:69: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  510 |                     DrawText("Waiting for the judge's decision...", 40, 620, 20, GRAY);
+      |                                                                     ^~
+      |                                                                     |
+      |                                                                     int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:510:78: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  510 |                     DrawText("Waiting for the judge's decision...", 40, 620, 20, GRAY);
+      |                                                                              ^~
+      |                                                                              |
+      |                                                                              int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:510:82: note: in expansion of macro 'GRAY'
+  510 |                     DrawText("Waiting for the judge's decision...", 40, 620, 20, GRAY);
+      |                                                                                  ^~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:515:26: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  515 |                 DrawText(result, 40, 620, 24, GREEN);
+      |                          ^~~~~~
+      |                          |
+      |                          char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:515:34: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  515 |                 DrawText(result, 40, 620, 24, GREEN);
+      |                                  ^~
+      |                                  |
+      |                                  int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:515:43: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  515 |                 DrawText(result, 40, 620, 24, GREEN);
+      |                                           ^~
+      |                                           |
+      |                                           int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:184:35: error: incompatible type for argument 5 of 'DrawTextA'
+  184 | #define GREEN      CLITERAL(Color){ 0, 228, 48, 255 }      // Green
+      |                                   ^~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:515:47: note: in expansion of macro 'GREEN'
+  515 |                 DrawText(result, 40, 620, 24, GREEN);
+      |                                               ^~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:517:26: error: passing argument 1 of 'DrawTextA' from incompatible pointer type [-Wincompatible-pointer-types]
+  517 |                 DrawText("Need two lawyers in the lobby.", 40, 620, 20, GRAY);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                          |
+      |                          char *
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:39: note: expected 'HDC' {aka 'struct HDC__ *'} but argument is of type 'char *'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                   ~~~~^~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/windef.h:47:1: note: 'HDC' declared here
+   47 | DECLARE_HANDLE(HDC);
+      | ^~~~~~~~~~~~~~
+src/main.c:517:60: error: passing argument 2 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  517 |                 DrawText("Need two lawyers in the lobby.", 40, 620, 20, GRAY);
+      |                                                            ^~
+      |                                                            |
+      |                                                            int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:50: note: expected 'LPCSTR' {aka 'const char *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                           ~~~~~~~^~~~~~~~
+src/main.c:517:69: error: passing argument 4 of 'DrawTextA' makes pointer from integer without a cast [-Wint-conversion]
+  517 |                 DrawText("Need two lawyers in the lobby.", 40, 620, 20, GRAY);
+      |                                                                     ^~
+      |                                                                     |
+      |                                                                     int
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:78: note: expected 'LPRECT' {aka 'struct tagRECT *'} but argument is of type 'int'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                       ~~~~~~~^~~~
+/home/syed/raylib-mingw32/raylib-5.5_win32_mingw-w64/include/raylib.h:176:35: error: incompatible type for argument 5 of 'DrawTextA'
+  176 | #define GRAY       CLITERAL(Color){ 130, 130, 130, 255 }   // Gray
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Color
+src/main.c:517:73: note: in expansion of macro 'GRAY'
+  517 |                 DrawText("Need two lawyers in the lobby.", 40, 620, 20, GRAY);
+      |                                                                         ^~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:3480:88: note: expected 'UINT' {aka 'unsigned int'} but argument is of type 'Color'
+ 3480 |   WINUSERAPI int WINAPI DrawTextA(HDC hdc,LPCSTR lpchText,int cchText,LPRECT lprc,UINT format);
+      |                                                                                   ~~~~~^~~~~~
+src/main.c:534:5: error: too few arguments to function 'CloseWindow'; expected 1, have 0
+  534 |     CloseWindow();
+      |     ^~~~~~~~~~~
+/usr/i686-w64-mingw32/sys-root/mingw/include/winuser.h:2282:29: note: declared here
+ 2282 |   WINUSERAPI WINBOOL WINAPI CloseWindow (HWND hWnd);
+      |                             ^~~~~~~~~~~
+[FAIL] win32
+[build] macx64
+osxcross: warning: cannot find clang intrinsic headers; please report this issue to the OSXCross project
+[build] macarm
+osxcross: warning: cannot find clang intrinsic headers; please report this issue to the OSXCross project
+osxcross: warning: your clang installation is outdated and can't parse '-mmacosx-version-min=11.0'. setting it to 10.16.
+clang: warning: overriding deployment version from '10.16' to '11.0' [-Woverriding-deployment-version]
+
+ok:   linux64 linux32 macx64 macarm
+skip: 
+fail: win64 win32
